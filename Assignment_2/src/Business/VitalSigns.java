@@ -5,6 +5,8 @@
  */
 package Business;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -13,21 +15,22 @@ import java.util.Scanner;
  */
 public class VitalSigns {
     
-   private String ageGroup;
+   private float ageGroup;
    private int respiratoryRate;
    private int heartRate;
    private int sysBP;
    private float weightInKilos;
    private float weightInPounds;
    private Boolean PatientStatus;
+   private Instant date;
    
   
 
-    public String getAgeGroup() {
+    public float getAgeGroup() {
         return ageGroup;
     }
 
-    public void setAgeGroup(String ageGroup) {
+    public void setAgeGroup(float ageGroup) {
         this.ageGroup = ageGroup;
     }
 
@@ -77,6 +80,12 @@ public class VitalSigns {
 
     public void setPatientStatus(Boolean PatientStatus) {
         this.PatientStatus = PatientStatus;
+    }
+
+    public Instant getDate() {
+        Date date =new Date();
+        return date.toInstant();
+        
     }
 
 

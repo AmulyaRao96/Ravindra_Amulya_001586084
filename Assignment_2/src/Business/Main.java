@@ -23,14 +23,14 @@ public class Main {
         while (true){
         Scanner scan = new Scanner(System.in); 
         System.out.println("Please Enter your Choice: ");
-        System.out.println("Enter");
-        System.out.println("Verify");
-        System.out.println("History ");
-        System.out.println("End");
+        System.out.println("1.Add Vital Signs");
+        System.out.println("2.Verify vital signs");
+        System.out.println("3.Check History of vital signs ");
+        System.out.println("4.End");
        
-        String userInput = scan.next();
+        float userInput = scan.nextFloat();
         
-        if (userInput.equalsIgnoreCase("Enter")){
+        if (userInput == 1){
             
             VitalSigns vs = new VitalSigns();
             System.out.println("Is this patient Existing ? (Yes/No)");
@@ -47,7 +47,7 @@ public class Main {
                     System.out.println("Patient ID : "+ patientId);
 
                     System.out.println("Enter the Age Group: ");
-                    String age = scan.next();
+                    float age = scan.nextFloat();
                     vs.setAgeGroup(age);
 
              
@@ -103,7 +103,7 @@ public class Main {
                         for(int i=0;i < p.size() ;i++){
                     if(p.get(i).getPatientid() == patientID){
                     System.out.println("Enter the Age Group: ");
-                    String ages = scan.next();
+                    float ages = scan.nextFloat();
                     vs.setAgeGroup(ages);
                     
                     
@@ -162,7 +162,7 @@ public class Main {
                 }
             }
             
-        }else if (userInput.equalsIgnoreCase("Verify")){
+        }else if (userInput==2){
             System.out.println("Enter the PatientID:");
             int patientid = scan.nextInt();
             int number =0;
@@ -189,7 +189,7 @@ public class Main {
             System.out.println(patientStatus);
             
         }
-        else if (userInput.equalsIgnoreCase("History")){
+        else if (userInput==3){
              System.out.println("Enter PatientID:");
             int ID = scan.nextInt();
             int number =0;
@@ -214,15 +214,16 @@ public class Main {
             for (VitalSigns vs : patient.vitalsignsHistory) {
                 a++;
                 
-                System.out.println("Patient's Type: "+vs.getAgeGroup());
+                System.out.println("Patient's AgeGroup: "+vs.getAgeGroup());
                 System.out.println("Patient's Respiratory Rate: "+vs.getRespiratoryRate());
                 System.out.println("Patient's Heart Rate: "+vs.getHeartRate());
                 System.out.println("Patients Blood Pressure: "+vs.getSysBP());
                 System.out.println("Patient's Weight(in Kgs): "+vs.getWeightInKilos());
-                System.out.println("Patients Weight(in Pounds): "+vs.getWeightInPounds()); 
+                System.out.println("Patients Weight(in Pounds): "+vs.getWeightInPounds());
+                System.out.println("Time Stamp: "+vs.getDate());
                 
             }
-        }else if (userInput.equalsIgnoreCase("End")){
+        }else if (userInput==4){
             System.out.println("\n Finished ");
             break;
         }
