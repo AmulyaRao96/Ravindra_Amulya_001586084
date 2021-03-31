@@ -68,14 +68,14 @@ public class RestaurantDirectory {
     
     }
     
-    public Dishes AddMenuDishes(Restaurant restro,String name,String desc,String amount){
+    public Dishes AddMenuDishes(Restaurant restraunt,String name,String desc,String amount){
         menu=new Dishes(name, desc, amount);
-        restro.addFoodItem(menu);
+        restraunt.addFoodItem(menu);
         return menu;
     }
     
-    public void DeleteDishes(Restaurant restro,Dishes menu){
-        restro.removeFoodItem(menu);
+    public void DeleteDishes(Restaurant restraunt,Dishes menu){
+        restraunt.removeFoodItem(menu);
         
     }
 

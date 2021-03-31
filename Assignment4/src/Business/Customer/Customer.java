@@ -7,14 +7,13 @@ package Business.Customer;
 
 import Business.Order.Order;
 import Business.Restaurant.Dishes;
-import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
  *
  * @author harold
  */
-public class Customer extends UserAccount {
+public class Customer  {
     
     private String name;
     private String username;

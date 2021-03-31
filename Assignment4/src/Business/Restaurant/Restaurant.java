@@ -18,12 +18,12 @@ public class Restaurant {
     private String address;
     private String number;
     private ArrayList<Dishes> Menu;
-    private ArrayList<Order> orderList;
+    private ArrayList<Order> orderlist;
     
     public Restaurant(String userName){
         this.username = userName;
         Menu = new ArrayList<Dishes>();
-        orderList=new ArrayList<Order>();
+        orderlist=new ArrayList<Order>();
     }
 
     public String getName() {
@@ -66,12 +66,12 @@ public class Restaurant {
         this.Menu = Menu;
     }
 
-    public ArrayList<Order> getOrderList() {
-        return orderList;
+    public ArrayList<Order> getOrderlist() {
+        return orderlist;
     }
 
-    public void setOrderList(ArrayList<Order> orderList) {
-        this.orderList = orderList;
+    public void setOrderlist(ArrayList<Order> orderList) {
+        this.orderlist = orderList;
     }
      public void addFoodItem(Dishes menu){
         Menu.add(menu);
@@ -91,7 +91,7 @@ public class Restaurant {
         order.setPriceofDish(priceofDish);
         order.setDeliveryAddress(deliveryAddress);
         order.setStatusofOrder("New Order");
-        orderList.add(order);
+        orderlist.add(order);
         id++;
     }
 }

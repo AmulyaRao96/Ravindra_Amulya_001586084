@@ -21,7 +21,7 @@ public class DeliveryMan {
     private String number;
     
     public DeliveryMan(String UserName){
-        this.username=username;
+        this.username=UserName;
         orderlist = new ArrayList<Order>();
     }
     
@@ -34,7 +34,7 @@ public class DeliveryMan {
         order.setOrder(Order);
         order.setPriceofDish(cost);
         order.setDeliveryAddress(deliveryaddress);
-        order.setStatusofOrder("New Order");
+        order.setStatusofOrder("New Order placed");
         orderlist.add(order);
         
 }
