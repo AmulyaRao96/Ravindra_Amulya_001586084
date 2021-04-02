@@ -21,7 +21,7 @@ public class RestaurantDirectory {
         restaurantdirectory = new ArrayList<Restaurant>();
     }
 
-    public ArrayList<Restaurant> getRestaurantdirectory() {
+    public ArrayList<Restaurant> getRestaurantDirectory() {
         return restaurantdirectory;
     }
 

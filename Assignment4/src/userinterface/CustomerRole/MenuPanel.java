@@ -10,7 +10,6 @@ import Business.Organization;
 import Business.Restaurant.Dishes;
 import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -52,6 +51,7 @@ public class MenuPanel extends javax.swing.JPanel {
          DefaultTableModel tablemodel = (DefaultTableModel) tblMenu.getModel();
         
             tablemodel.setRowCount(0);
+            
                 Object[] row = new Object[3];
                 for(Dishes dish:restaurant.getMenu()){
                      row[0] = dish;

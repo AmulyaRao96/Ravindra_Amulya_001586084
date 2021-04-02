@@ -42,7 +42,7 @@ public void populateFoodCatalogue(){
         tablemodel.setRowCount(0);
         
        
-        for (Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantdirectory()) {
+        for (Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantDirectory()) {
            
             if (restro.getUsername().equals(account.getUsername())) {
                 System.out.println("1");
@@ -233,7 +233,7 @@ public void populateFoodCatalogue(){
 
     private void btnAddFoodItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddFoodItemActionPerformed
         // TODO add your handling code here:
-        for(Restaurant restro : ecosystem.getRestaurantDirectory().getRestaurantdirectory()){
+        for(Restaurant restro : ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
             if(restro.getUsername().equals(account.getUsername())){
                 menu = ecosystem.getRestaurantDirectory().AddMenuDishes(restro, txtFoodName.getText(), txtFoodDescription.getText(), txtPrice.getText());
             }
@@ -259,7 +259,7 @@ public void populateFoodCatalogue(){
             int selectionResult = JOptionPane.showConfirmDialog(null, "Confirm delete??","Warning",selectionButton);
             if(selectionResult == JOptionPane.YES_OPTION){
 
-                for(Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantdirectory()){
+                for(Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
                     if(restro.getUsername().equals(account.getUsername())){
                         ecosystem.getRestaurantDirectory().DeleteDishes(restro, menu);
                     }

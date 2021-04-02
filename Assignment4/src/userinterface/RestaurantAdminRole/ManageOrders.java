@@ -23,7 +23,7 @@ public class ManageOrders extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrders
      */
-     private JPanel userProcessContainer;
+    private JPanel userProcessContainer;
     private UserAccount account;
     private EcoSystem ecosystem;
     
@@ -41,7 +41,7 @@ public class ManageOrders extends javax.swing.JPanel {
         tablemodel.setRowCount(0);
         
        
-        for (Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantdirectory()) {
+        for (Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantDirectory()) {
            
             if (restro.getUsername().equals(account.getUsername())) {
                 //System.out.println(restro.getOrderList());
@@ -50,8 +50,8 @@ public class ManageOrders extends javax.swing.JPanel {
                 row[0] = order;
                 row[1] = order.getCustomerName();
                 row[2] = order.getDeliveryAddress();
-                row[3] = order.getPriceofDish();
-                row[4] = order.getStatusofOrder();
+                row[3] = order.getStatusofOrder();
+                //row[4] = order.getStatusofOrder();
                 tablemodel.addRow(row);
                }
                 
@@ -82,11 +82,11 @@ public class ManageOrders extends javax.swing.JPanel {
 
             },
             new String [] {
-                "OrderID", "Customer", "Delivery Location", "Price", "Status"
+                "OrderID", "Customer", "Delivery Location", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

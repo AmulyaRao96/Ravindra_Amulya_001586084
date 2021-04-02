@@ -36,7 +36,7 @@ public class ManageRestroInfo extends javax.swing.JPanel {
     }
     
     public void populateTextFields(){
-        for(Restaurant restaurant: ecosystem.getRestaurantDirectory().getRestaurantdirectory()){
+        for(Restaurant restaurant: ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
             if(restaurant.getUsername().equals(account.getUsername())){
                 txtRestaurantName.setText(restaurant.getName());
                 txtAddress.setText(restaurant.getAddress());
@@ -205,7 +205,7 @@ public class ManageRestroInfo extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
 
-        for(Restaurant restro: ecosystem.getRestaurantDirectory().getRestaurantdirectory()){
+        for(Restaurant restro: ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
             if(restro.getUsername().equals(account.getUsername())){
                 ecosystem.getRestaurantDirectory().updateRestaurantInfo(restro, txtRestaurantName.getText(), txtPhoneNumber.getText(), txtAddress.getText());
             }

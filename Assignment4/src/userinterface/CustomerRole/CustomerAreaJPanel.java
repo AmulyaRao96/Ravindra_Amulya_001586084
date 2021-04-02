@@ -5,10 +5,10 @@
 package userinterface.CustomerRole;
 
 import Business.EcoSystem;
+import Business.Order.Order;
 import Business.Restaurant.Restaurant;
-
+import Business.Customer.Customer;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -34,23 +34,23 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         this.account = account;
         
         populateRequestTable();
-      
+        lblCustomerID.setText(account.getUsername());
       
        
        
         
     }
 public void populateRequestTable(){
-         DefaultTableModel tablemodel = (DefaultTableModel) tblRestaurant.getModel();
+          DefaultTableModel tablemodel = (DefaultTableModel) tblRestaurant.getModel();
         
          tablemodel.setRowCount(0);
          
        
                 Object[] row = new Object[3];
-                
-                for(Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantdirectory()){
+                //System.out.println();
+                for(Restaurant restro:ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
                      row[0] = restro;
-              
+                     //System.out.println(restro.getAdminUName());
                      row[1] = restro.getAddress();
                      row[2] = restro.getNumber();
                      tablemodel.addRow(row);
@@ -75,6 +75,8 @@ public void populateRequestTable(){
         enterpriseLabel = new javax.swing.JLabel();
         lblCustomerID = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+
+        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
 
         tblRestaurant.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -193,7 +195,7 @@ public void populateRequestTable(){
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         int selectedRow = tblRestaurant.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null," select a particular  row to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             Restaurant restaurant = (Restaurant)tblRestaurant.getValueAt(selectedRow, 0);
